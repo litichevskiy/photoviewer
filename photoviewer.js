@@ -10,6 +10,7 @@
 	var countPreviewLeft;
 	var countStyle         = 0;
 	var counterTime        = 0;
+	var countload          = 4;
 
 
  	var mainFotoRight = document.querySelector('[data-mainRight-name="right"]');
@@ -22,13 +23,19 @@
 
 	function addborder ( elem ) {
 
-		( elem.dataset.num ) ? elem.classList.add('backlightFoto') : null;
+		if ( elem.dataset.num ) {
+
+			elem.classList.add('backlightFoto');
+		};
 	};
 
 
 	function removeborder(  ) {
 				
-		( document.getElementsByClassName('backlightFoto')[0] ) ? document.getElementsByClassName('backlightFoto')[0].classList.remove('backlightFoto') : null;
+	    if ( document.getElementsByClassName('backlightFoto')[0] ) {
+
+	    	document.getElementsByClassName('backlightFoto')[0].classList.remove('backlightFoto');
+	    }; 
 		 
 	};
 
@@ -39,16 +46,43 @@
 		var visiblePreview = document.querySelectorAll('[data-name="2"] img');
 		var target = event.target || event;
 		
-		if ( target === mainFotoRight && countBacklight === 4 ) { return previewRight.onclick( removeborder( ) ) };
-		if ( target === mainFotoLeft  && countBacklight === 0 ) { return previewLeft.onclick(  removeborder( ) ) };
-		if ( target === mainFotoRight ) { return mainFoto.src = hiddenMainFoto[ ++countBacklight ].src, addborder( visiblePreview[ countBacklight ], removeborder() ) };
-		if ( target === mainFotoLeft  ) { return mainFoto.src = hiddenMainFoto[ --countBacklight ].src, addborder( visiblePreview[ countBacklight ], removeborder() ) };
-		if ( target.tagName === 'IMG' ) { return addborder( target, removeborder( ) ), mainFoto.src = hiddenMainFoto[ parseInt( target.dataset.num ) ].src, countBacklight = parseInt( target.dataset.num ) };
+		if ( target === mainFotoRight && countBacklight === 4 ) {
+
+			previewRight.onclick( removeborder( ) );
+			return; 
+		};
+		if ( target === mainFotoLeft  && countBacklight === 0 ) {
+
+			previewLeft.onclick(  removeborder( ) );
+			return; 
+		};
+		if ( target === mainFotoRight ) {
+
+			removeborder();
+			mainFoto.src = hiddenMainFoto[ ++countBacklight ].src;
+			addborder( visiblePreview[ countBacklight ] );
+			return;
+		};
+		if ( target === mainFotoLeft  ) {
+
+			removeborder();
+			mainFoto.src = hiddenMainFoto[ --countBacklight ].src;
+			addborder( visiblePreview[ countBacklight ] );
+			return; 
+		};
+		if ( target.tagName === 'IMG' ) { 
+
+			countBacklight = parseInt( target.dataset.num );
+			addborder( target, removeborder( ) );
+			mainFoto.src = hiddenMainFoto[ parseInt( target.dataset.num ) ].src;
+			return;   
+		};
 
 	};
 
 	
 	previewLeft.onclick = function(  ) {
+		
 		countMainFotoRight = countMainFotoLeft +1;
 		countPreviewRight  = countPreviewLeft + 11;
 
@@ -60,11 +94,14 @@
 		hiddenMainFoto.forEach = [].forEach;
 		hiddenMainFoto.forEach( function( item, i ) {
 
-			( countMainFotoLeft === -1 ) ? countMainFotoLeft = linkToPhoto.length -1 : countMainFotoLeft = countMainFotoLeft;
-			hiddenMainFoto[i].src = linkToPhoto[ countMainFotoLeft ].orig;
+			( countMainFotoLeft < 0 ) ? countMainFotoLeft = linkToPhoto.length -1 : countMainFotoLeft = countMainFotoLeft;
+			hiddenMainFoto[ countload ].src = linkToPhoto[ countMainFotoLeft ].orig;	
 			countMainFotoLeft--;
+			countload--;
 		
 			});
+
+		countload = 4;
 	
 		mainFoto.src = hiddenMainFoto[2].src; 
 
@@ -81,7 +118,8 @@
 
 		});
 
-		setTimeout( onloadImg, 100 );
+		onloadImg();
+
 		addborder( hiddenPreviewRight[2].children[0] );
 
 		hiddenPreviewLeft.forEach = [].forEach;
@@ -89,16 +127,20 @@
 
 			hiddenPreviewLeft[i].dataset.name = 1;
 			
-			( countPreviewLeft === -1 ) ? countPreviewLeft = linkToPhoto.length -1 : countPreviewLeft = countPreviewLeft;
-			item.children[0].src = linkToPhoto[ countPreviewLeft ].thumb;
+			( countPreviewLeft < 0 ) ? countPreviewLeft = linkToPhoto.length -1 : countPreviewLeft = countPreviewLeft;
+			hiddenPreviewLeft[ countload ].children[0].src = linkToPhoto[ countPreviewLeft ].thumb;
 			countPreviewLeft--;
+			countload--;
 		});
+
+		countload = 4;
 
 		countBacklight = 2;
 	};
 
 
 	previewRight.onclick = function(  ) {
+
 		countPreviewLeft  = countPreviewRight -11;
 		countMainFotoLeft = countMainFotoRight -1;
 
@@ -110,12 +152,12 @@
 		hiddenMainFoto.forEach = [].forEach;
 		hiddenMainFoto.forEach( function( item, i ) {
 
-			( countMainFotoRight === linkToPhoto.length ) ? countMainFotoRight = 0 : countMainFotoRight = countMainFotoRight;//
+			( countMainFotoRight >= linkToPhoto.length -1 ) ? countMainFotoRight = 0 : countMainFotoRight = countMainFotoRight;
 			hiddenMainFoto[i].src = linkToPhoto[ countMainFotoRight ].orig;
 			countMainFotoRight++;
 		
 		});
-		mainFoto.src = hiddenMainFoto[2].src; 
+		mainFoto.src = hiddenMainFoto[2].src;
 
 		visiblePreview.forEach = [].forEach;
 		visiblePreview.forEach( function( item, i ) {
@@ -128,14 +170,16 @@
 			hiddenPreviewRight[i].dataset.name = 2;
 			
 		});
-		setTimeout( onloadImg, 100 );
+
+		onloadImg();
+
 		addborder( hiddenPreviewRight[2].children[0] );
 
 		hiddenPreviewLeft.forEach = [].forEach;
 		hiddenPreviewLeft.forEach( function( item, i ) {
 
 			hiddenPreviewLeft[i].dataset.name = 3;
-			( countPreviewRight === linkToPhoto.length ) ? countPreviewRight = 0 : countPreviewRight = countPreviewRight;
+			( countPreviewRight >= linkToPhoto.length -1 ) ? countPreviewRight = 0 : countPreviewRight = countPreviewRight;
 			item.children[0].src = linkToPhoto[ countPreviewRight ].thumb;
 			countPreviewRight++;
 		});
@@ -165,10 +209,16 @@
 	 	mainFoto.style.left       = '0%';
 	 	mainFoto.style.top        = '0%';
 	 	
-	 	if ( countStyle === 2 ) { return mainFoto.style.height = '100%', mainFotoRight.style.zIndex = '0', mainFotoLeft.style.zIndex = '0' };
+	 	if ( countStyle === 2 ) {
+
+	 		mainFoto.style.height = '100%';
+	 		mainFotoRight.style.zIndex = '0'; 
+	 		mainFotoLeft.style.zIndex = '0';
+	 		return;
+	 	};
 	 	if ( countStyle === 0 ) { return previousStyleViewerFoto ( )  };
 
-	 	//clearInterval( id );
+	 	clearInterval( id );
 
 	};
 
@@ -190,34 +240,35 @@
 		mainFoto.style.width  = '70%';
 	 	mainFoto.style.top    = '1em';
 
-	 	//id = setInterval( countertime, 5000 );
+	 	id = setInterval( countertime, 5000 );
 	};  
 
 
-	// id = setInterval( countertime, 5000 );
+	id = setInterval( countertime, 5000 );
 
- //    function countertime ( ) {
+    function countertime ( ) {
 
- //    	counterTime++;
+    	counterTime++;
 
- //    	if ( counterTime === 2 ) {
- //    		counterTime = 0;
- //    		countStyle++
- //    		newStyleViewerFoto();
- //    	};
- //    };
+    	if ( counterTime === 2 ) {
+    		counterTime = 0;
+    		countStyle++
+    		newStyleViewerFoto();
+    	};
+    };
 
     
-	// viewerFoto.onmousemove = function( ) {
+	viewerFoto.onmousemove = function( ) {
 		
-	// 	counterTime = 0;
- //    };
+		counterTime = 0;
+    };
 
 
  	document.onkeydown = function ( event ) {
 
  		var code = event.keyCode;
 
+ 		if ( code === 40 && countStyle === 2 ) { return null };
  		if ( code === 38 && countStyle === 0 ) { return null };
  		if ( code === 38 ) { return --countStyle, newStyleViewerFoto( ) };
  		if ( code === 40 ) { return ++countStyle, newStyleViewerFoto( ) };
@@ -243,7 +294,7 @@
 	
 	function InitialLoadingFoto ( linkToPhotoS ) {
 		
-		( linkToPhotoS.length < 15 ) ? error() : null;
+		if ( linkToPhotoS.length < 15 ) { error() };
 
 		linkToPhoto = linkToPhotoS;
 		countPreviewLeft = linkToPhotoS.length -1;
@@ -270,7 +321,14 @@
 
 		mainFoto.src = bigFoto[2].src;
 
-		setTimeout( viewerFoto.style.visibility = 'visible' ,onloadImg, 100 );
+		setTimeout( onloadImg, 100 );
+		setTimeout( viewerPhotoVisible, 100 );
+	};
+
+
+	function viewerPhotoVisible( ) {
+
+		viewerFoto.style.visibility = 'visible';	
 	};
 
 	function onloadImg (  ) {
@@ -280,14 +338,11 @@
 		imgElem.forEach = [].forEach;
 		imgElem.forEach( function( item, i ) {
 
-			( item.src.onload ) ? null : item.classList.add('loading');
+			if ( !item.src.onload ) { item.classList.add('loading') }; 
 		});
 		
 
 	};
-
-	
-	
 
 
 	exports.InitialLoadingFoto = InitialLoadingFoto;	
@@ -303,50 +358,3 @@
 
 
 
-
-// previewLeft.onclick = function(  ) {
-		
-// 		var hiddenMainFoto     = document.querySelectorAll('[data-foto="hiddenMainFoto"] img');
-// 		var visiblePreview	   = document.querySelectorAll('[data-name="2"]');
-// 		var hiddenPreviewRight = document.querySelectorAll('[data-name="1"]');
-// 		var hiddenPreviewLeft  = document.querySelectorAll('[data-name="3"]');
-
-// 		hiddenMainFoto.forEach = [].forEach;
-// 		hiddenMainFoto.forEach( function( item, i ) {
-
-// 			( countMainFotoLeft === -1 ) ? countMainFotoLeft = linkToPhoto.length -1 : countMainFotoLeft = countMainFotoLeft;
-// 			hiddenMainFoto[i].src = linkToPhoto[ countMainFotoLeft ].orig;
-// 			countMainFotoLeft--;
-		
-// 			});
-	
-// 		mainFoto.src = hiddenMainFoto[2].src; 
-
-// 		visiblePreview.forEach = [].forEach;
-// 		visiblePreview.forEach( function( item, i ) {
-		
-// 			visiblePreview[i].dataset.name = 3;
-// 		});
-
-// 		hiddenPreviewRight.forEach = [].forEach;
-// 		hiddenPreviewRight.forEach( function( item, i ) {
-		
-// 			hiddenPreviewRight[i].dataset.name = 2;
-
-// 		});
-
-// 		setTimeout( onloadImg, 100 );
-// 		addborder( hiddenPreviewRight[2].children[0] );
-
-// 		hiddenPreviewLeft.forEach = [].forEach;
-// 		hiddenPreviewLeft.forEach( function( item, i ) {
-
-// 			hiddenPreviewLeft[i].dataset.name = 1;
-			
-// 			( countPreviewLeft === -1 ) ? countPreviewLeft = linkToPhoto.length -1 : countPreviewLeft = countPreviewLeft;
-// 			item.children[0].src = linkToPhoto[ countPreviewLeft ].thumb;
-// 			countPreviewLeft--;
-// 		});
-
-// 		countBacklight = 2;
-// 	};

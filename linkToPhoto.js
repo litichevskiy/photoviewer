@@ -1212,8 +1212,8 @@ var aircraft = [
         "orig": "http://www.air-voyage.ru/files/editor/lichn_samolet_2.jpg"
     },
     {
-        "thumb": "",
-        "orig": ""
+        "thumb": "http://img-fotki.yandex.ru/get/9062/153285352.21/0_b1c4b_e3a80a96_XXL.jpg",
+        "orig": "http://img-fotki.yandex.ru/get/9062/153285352.21/0_b1c4b_e3a80a96_XXL.jpg"
     },
     {
         "thumb": "http://www.mostrated.ru/img/technics/aircraft/9-samih-dorogih-chastnih-samoletov/9.jpg",
