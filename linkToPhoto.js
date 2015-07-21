@@ -1203,3 +1203,146 @@ var linkToPhoto = [
     }
 
 ];
+
+
+var aircraft = [
+
+    {
+        "thumb": "http://www.air-voyage.ru/files/editor/lichn_samolet_2.jpg",
+        "orig": "http://www.air-voyage.ru/files/editor/lichn_samolet_2.jpg"
+    },
+    {
+        "thumb": "",
+        "orig": ""
+    },
+    {
+        "thumb": "http://www.mostrated.ru/img/technics/aircraft/9-samih-dorogih-chastnih-samoletov/9.jpg",
+        "orig": "http://www.mostrated.ru/img/technics/aircraft/9-samih-dorogih-chastnih-samoletov/9.jpg"
+    },
+    {
+        "thumb": "http://poshex.ru/wp-content/uploads/2013/10/Boeing-business-jet-1.jpg",
+        "orig": "http://poshex.ru/wp-content/uploads/2013/10/Boeing-business-jet-1.jpg"
+    },
+    {
+        "thumb": "http://elitethings.com/wp-content/uploads/2013/12/HondaJet.jpg",
+        "orig": "http://elitethings.com/wp-content/uploads/2013/12/HondaJet.jpg"
+    },
+    {
+        "thumb": "http://elitethings.com/wp-content/uploads/2013/12/HondaJet.jpg",
+        "orig": "http://elitethings.com/wp-content/uploads/2013/12/HondaJet.jpg"
+    },
+    {
+        "thumb": "http://www.gandex.ru/upl/oboi/gandex.ru-26_971b70123aa56cbc70cbdb7dabe28970.jpg",
+        "orig": "http://www.gandex.ru/upl/oboi/gandex.ru-26_971b70123aa56cbc70cbdb7dabe28970.jpg"
+    },
+    {
+        "thumb": "http://rnns.ru/uploads/posts/2014-04/1396512598_1365688915_324613-5300x3392.jpg",
+        "orig": "http://rnns.ru/uploads/posts/2014-04/1396512598_1365688915_324613-5300x3392.jpg"
+    },
+    {
+        "thumb": "http://4tololo.ru/files/styles/large/public/images/20141106143959.jpg?itok=wg8SYB2t",
+        "orig": "http://4tololo.ru/files/styles/large/public/images/20141106143959.jpg?itok=wg8SYB2t"
+    },
+    {
+        "thumb": "http://www.zastavki.com/pictures/originals/2014/Aviation_The_plane_takes_off_087536_.jpg",
+        "orig": "http://www.zastavki.com/pictures/originals/2014/Aviation_The_plane_takes_off_087536_.jpg"
+    },
+    {
+        "thumb": "http://cs410918.vk.me/v410918603/1f16/31IMopUFsmQ.jpg",
+        "orig": "http://cs410918.vk.me/v410918603/1f16/31IMopUFsmQ.jpg"
+    },
+    {
+        "thumb": "http://luxlux.net/wp-content/uploads/2011/09/preimushhestva-samoletov-pered-drugimi-vidami-transporta-yasnyi-kazhdomu-sovremennomu-cheloveku.jpg",
+        "orig": "http://luxlux.net/wp-content/uploads/2011/09/preimushhestva-samoletov-pered-drugimi-vidami-transporta-yasnyi-kazhdomu-sovremennomu-cheloveku.jpg"
+    },
+    {
+        "thumb": "http://www.goldengod.ru/wp-content/uploads/2009/10/gulfstream-g250.jpg",
+        "orig": "http://www.goldengod.ru/wp-content/uploads/2009/10/gulfstream-g250.jpg"
+    },
+    {
+        "thumb": "http://www.bankoboev.ru/images/NDQyMzE5/Bankoboev.Ru_samolet_vzletaet_s_polosy.jpg",
+        "orig": "http://www.bankoboev.ru/images/NDQyMzE5/Bankoboev.Ru_samolet_vzletaet_s_polosy.jpg"
+    },
+    {
+        "thumb": "http://mygazeta.com/i/2012/06/8474.jpg",
+        "orig": "http://mygazeta.com/i/2012/06/8474.jpg"
+    },
+    {
+        "thumb": "http://foodiss.com/site/assets/2015/04/301e59e79ade55d6cfb57d5303ddf20e.jpg",
+        "orig": "http://foodiss.com/site/assets/2015/04/301e59e79ade55d6cfb57d5303ddf20e.jpg"
+    }
+];
+
+
+
+var zippo = [
+
+    {
+        "thumb": "http://upload.wikimedia.org/wikipedia/commons/a/a7/Zippo_12.JPG",
+        "orig": "http://upload.wikimedia.org/wikipedia/commons/a/a7/Zippo_12.JPG"
+    },
+    {
+        "thumb": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg",
+        "orig": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg"
+    },
+    {
+        "thumb": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQwvKN2KOm1bMuponoaJZ-OE0Pcb4rRRsaco66kJf5bU3bvXzbaPg",
+        "orig": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQwvKN2KOm1bMuponoaJZ-OE0Pcb4rRRsaco66kJf5bU3bvXzbaPg"
+    },
+    {
+        "thumb": "http://gi1.md.alicdn.com/imgextra/i1/1048354351/T2wKWWXi8XXXXXXXXX_!!1048354351.jpg",
+        "orig": "http://gi1.md.alicdn.com/imgextra/i1/1048354351/T2wKWWXi8XXXXXXXXX_!!1048354351.jpg"
+    },
+    {
+        "thumb": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg",
+        "orig": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg"
+    },
+    {
+        "thumb": "http://www.wallsave.com/wallpapers/1280x1024/zippo/317773/zippo-briquets-317773.jpg",
+        "orig": "http://www.wallsave.com/wallpapers/1280x1024/zippo/317773/zippo-briquets-317773.jpg"
+    },
+    {
+        "thumb": "http://pre07.deviantart.net/9edc/th/pre/i/2011/344/d/5/zippo_by_sachin0487-d4inzgr.jpg",
+        "orig": "http://pre07.deviantart.net/9edc/th/pre/i/2011/344/d/5/zippo_by_sachin0487-d4inzgr.jpg"
+    },
+    {
+        "thumb": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg",
+        "orig": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg"
+    },
+    {
+        "thumb": "http://img.inforico.com.ua/a/prodam-Zippo-zazhigalki-gravirovka-vashego-izobrazheniya-varg-vikernes--0967-1365707263874925-1-big.jpg",
+        "orig": "http://img.inforico.com.ua/a/prodam-Zippo-zazhigalki-gravirovka-vashego-izobrazheniya-varg-vikernes--0967-1365707263874925-1-big.jpg"
+    },
+    {
+        "thumb": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg",
+        "orig": "http://st.gdefon.com/wallpapers_original/s/377905_zippo_zazhigalka_1680x1050_(www.GdeFon.ru).jpg"
+    },
+    {
+        "thumb": "http://www.litemen.com/images/Zippo-218ZL-rw-17906-9454.jpg",
+        "orig": "http://www.litemen.com/images/Zippo-218ZL-rw-17906-9454.jpg"
+    },
+    {
+        "thumb": "http://www.litemen.com/images/150zl.jpg",
+        "orig": "http://www.litemen.com/images/150zl.jpg"
+    },
+    {
+        "thumb": "http://www.ilkkimbuldu.com/wp-content/uploads/2015/04/zippo-2-300x256.jpg",
+        "orig": "http://www.ilkkimbuldu.com/wp-content/uploads/2015/04/zippo-2-300x256.jpg"
+    },
+    {
+        "thumb": "http://img.inforico.com.ua/a/prodam-Zippo-zazhigalki-gravirovka-vashego-izobrazheniya-varg-vikernes--0967-1365707263874925-1-big.jpg",
+        "orig": "http://img.inforico.com.ua/a/prodam-Zippo-zazhigalki-gravirovka-vashego-izobrazheniya-varg-vikernes--0967-1365707263874925-1-big.jpg"
+    },
+    {
+        "thumb": "http://www.litemen.com/images/Zippo-218ZL-rw-17906-9454.jpg",
+        "orig": "http://www.litemen.com/images/Zippo-218ZL-rw-17906-9454.jpg"
+    },
+    {
+        "thumb": "http://www.litemen.com/images/Zippo-218ZL-rw-17906-9454.jpg",
+        "orig": "http://www.litemen.com/images/Zippo-218ZL-rw-17906-9454.jpg"
+    }
+    
+];
+
+
+
